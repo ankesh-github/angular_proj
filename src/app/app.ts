@@ -3,15 +3,20 @@ import { RouterOutlet } from '@angular/router';
 import { Login } from "./login/login";
 import { Signup } from "./signup/signup";
 import { Profile } from "./profile/profile";
-import { ValueChangeEvent } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  users = ['Ramesh','Mahesh','Naresh','Suresh'];
+  name="Ankesh";
+
+  // changeName(event: Event){
+  //   const val=(event.target as HTMLInputElement).value;
+  //   this.name=val;
+  // }
  
 }
