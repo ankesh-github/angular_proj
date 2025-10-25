@@ -12,12 +12,20 @@ import { ValueChangeEvent } from '@angular/forms';
   styleUrl: './app.css'
 })
 export class App {
-  //data = signal< number | string>(10);
-  data : WritableSignal< number> = signal(10);
-  count : Signal<number>=computed(()=>20);
+  data = computed(()=>20);
+  count = signal(20);
+
+  x=signal(20);
+  y=signal(30);
+  z=computed(()=> this.x() + this.y());
 
   updateValue(){
-    //this.data.set("Hello");
-    this.data.update(val=> val+10);
+    console.log(this.z());
+    this.x.set(100);
+    console.log(this.z());
+  }
+
+  updateXValue(){
+    this.x.set(1000);
   }
 }
