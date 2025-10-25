@@ -11,8 +11,15 @@ import { Profile } from "./profile/profile";
   styleUrl: './app.css'
 })
 export class App {
-  title = "This is demo for angular project";
-  name : string = "Ankesh Tiwari";
-  data=100;
-  data2=200;
+  handleClickEvent()
+  {
+    //alert("function called");
+    console.log("function called!");
+    this.otherFunction();
+  }
+
+  otherFunction()
+  {
+    console.log("other function!");
+  }
 }
