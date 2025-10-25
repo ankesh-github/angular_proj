@@ -1,2 +1,16 @@
-<h1>Function call on Button Click</h1>
-<button (click)="handleClickEvent()">Click Me</button>
+<h1>Counter App</h1>
+<div style="text-align: center;">
+    <h3 class ="count">{{count}}</h3>
+    <div>
+        <button class="btn bg-red" (click)="handleCounter('minus')">Decrement</button>
+        <button class="btn bg-black" (click)="handleCounter('reset')">Reset</button>
+        <button (click)="handleCounter('plus')" class="btn bg-green">Increment</button>
+    </div>
+
+    <!-- <div>
+        <button class="btn bg-red" (click)="handleDecrement()">Decrement</button>
+        <button class="btn bg-black" (click)="handleReset()">Reset</button>
+        <button (click)="handleIncrement()" class="btn bg-green">Increment</button>
+    </div> -->
+</div>
+
