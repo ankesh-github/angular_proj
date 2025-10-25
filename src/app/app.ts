@@ -12,20 +12,6 @@ import { ValueChangeEvent } from '@angular/forms';
   styleUrl: './app.css'
 })
 export class App {
-  userName = signal('Ram');
-  count=signal(0);
-  displayHeading=false;
-
-  constructor(){
-    effect(()=>{
-      if(this.count()==2){
-        this.displayHeading=true;
-        setTimeout(()=>{
-          this.displayHeading=false;
-        })
-      }else{
-        this.displayHeading=false;
-      }
-    })
-  }
+  users = ['Ramesh','Mahesh','Naresh','Suresh'];
+ 
 }
