@@ -7,24 +7,30 @@ import { ValueChangeEvent } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [Profile],
+  imports: [],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  username="";
+  display = true;
+  val = 10;
+  displayOneDiv=true;
 
-  getUserName(event:Event){
-    //this.username = (event.target as HTMLInputElement).value;
-
+  hide(){
+    this.display = false;
   }
 
-  setUserName(){
-    this.username="Peter";
+  show(){
+    this.display = true;
   }
 
-  getUserNameWithTemplate(val : string){
-    this.username=val;
-    console.log(val);
+  toggle(){
+    this.display =! this.display;
   }
+
+  toggleDivs(){
+    this.displayOneDiv =! this.displayOneDiv;
+  }
+
+ 
 }

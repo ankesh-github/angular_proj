@@ -1,12 +1,31 @@
-<style>
-    h2 {
-        color : orange;
-        background-color: black;
-    }
-</style>
+<h1>If Else | Control flow</h1>
 
-<h1>CSS Style Rules and Use</h1>
-<app-profile></app-profile>
-<h2>Heading H2</h2>
-<h3 style="color: green; background-color: yellow; ">This is H3 Tag</h3>
+<!-- @if(val==10){
+<div style="background-color: goldenrod; height: 200px; width: 200px;">
+</div>
+} -->
+<button (click)="hide()">Hide</button>
+<button (click)="show()">Show</button>
+<button (click)="toggle()">Toggle</button>
+<button (click)="toggle()">
+    {{display?'hide':'show'}}
+</button>
 
+@if(display){
+<div style="background-color: green; height: 200px; width: 200px;">
+</div>
+}
+
+<hr>
+
+<button (click)="toggleDivs()">Toggle Div</button>
+@if(displayOneDiv){
+<div style="background-color: blue; width: 100px; height: 100px; ">
+
+</div>
+}
+@else {
+<div style="background-color: red; width: 100px; height: 100px; ">
+</div>
+
+}
