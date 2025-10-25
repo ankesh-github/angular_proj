@@ -12,25 +12,13 @@ import { ValueChangeEvent } from '@angular/forms';
   styleUrl: './app.css'
 })
 export class App {
-  display = true;
-  val = 10;
-  displayOneDiv=true;
-
-  hide(){
-    this.display = false;
+  color = "green";
+  handleColor(val : string){
+    this.color=val; 
   }
 
-  show(){
-    this.display = true;
+  changeColor(event : Event){
+    this.color = (event.target as HTMLInputElement).value;
   }
-
-  toggle(){
-    this.display =! this.display;
-  }
-
-  toggleDivs(){
-    this.displayOneDiv =! this.displayOneDiv;
-  }
-
  
 }

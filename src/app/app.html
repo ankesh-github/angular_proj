@@ -1,31 +1,28 @@
-<h1>If Else | Control flow</h1>
+<h1>Switch Case in Angular 20</h1>
 
-<!-- @if(val==10){
-<div style="background-color: goldenrod; height: 200px; width: 200px;">
-</div>
-} -->
-<button (click)="hide()">Hide</button>
-<button (click)="show()">Show</button>
-<button (click)="toggle()">Toggle</button>
-<button (click)="toggle()">
-    {{display?'hide':'show'}}
-</button>
+<button (click)="handleColor('red')">Red</button>
+<button (click)="handleColor('blue')">Blue</button>
+<button (click)="handleColor('yellow')">Yellow</button>
+<button (click)="handleColor('green')">Green</button>
+<button (click)="handleColor('default')">Default</button>
+<input type="text" placeholder="enter color" (input)="changeColor($event)">
 
-@if(display){
-<div style="background-color: green; height: 200px; width: 200px;">
-</div>
-}
+@switch(color){
+    @case('red'){
+        <h1 style="background-color: red;">Red color</h1>
+    }
+    @case('blue'){
+        <h1 style="background-color: blue;">Blue color</h1>
+    }
+    @case('yellow'){
+        <h1 style="background-color: yellow;">Yellow color</h1>
+    }
+    @case('green'){
+        <h1 style="background-color: green;">Green color</h1>
+    }
+    @default {
+        <h1 style="background-color: black; color:white">No Match</h1>
 
-<hr>
-
-<button (click)="toggleDivs()">Toggle Div</button>
-@if(displayOneDiv){
-<div style="background-color: blue; width: 100px; height: 100px; ">
-
-</div>
-}
-@else {
-<div style="background-color: red; width: 100px; height: 100px; ">
-</div>
+    }
 
 }
