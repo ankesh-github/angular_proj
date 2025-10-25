@@ -1,4 +1,4 @@
-import { Component, computed, signal, Signal, WritableSignal } from '@angular/core';
+import { Component, computed, effect, signal, Signal, WritableSignal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Login } from "./login/login";
 import { Signup } from "./signup/signup";
@@ -12,20 +12,20 @@ import { ValueChangeEvent } from '@angular/forms';
   styleUrl: './app.css'
 })
 export class App {
-  data = computed(()=>20);
-  count = signal(20);
+  userName = signal('Ram');
+  count=signal(0);
+  displayHeading=false;
 
-  x=signal(20);
-  y=signal(30);
-  z=computed(()=> this.x() + this.y());
-
-  updateValue(){
-    console.log(this.z());
-    this.x.set(100);
-    console.log(this.z());
-  }
-
-  updateXValue(){
-    this.x.set(1000);
+  constructor(){
+    effect(()=>{
+      if(this.count()==2){
+        this.displayHeading=true;
+        setTimeout(()=>{
+          this.displayHeading=false;
+        })
+      }else{
+        this.displayHeading=false;
+      }
+    })
   }
 }

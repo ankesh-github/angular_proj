@@ -1,4 +1,6 @@
-<h1>Computed Signals</h1>
-<h2>{{z()}}</h2>
-<button (click)="updateValue()">Update Value</button>
-<button (click)="updateXValue()">Update X Value</button>
+<h1>Effect in Angular</h1>
+<h1>{{count()}}</h1>
+<button (click)="count.set(count()+1)">Update userName</button>
+@if(displayHeading) {
+    <h1 style="background-color: green;">Main Heading</h1>
+}
