@@ -1,4 +1,4 @@
-import { Component, effect, signal } from '@angular/core';
+import { Component, computed, signal, Signal, WritableSignal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Login } from "./login/login";
 import { Signup } from "./signup/signup";
@@ -12,25 +12,12 @@ import { ValueChangeEvent } from '@angular/forms';
   styleUrl: './app.css'
 })
 export class App {
-  data = 100;
-  count = signal(10);
+  //data = signal< number | string>(10);
+  data : WritableSignal< number> = signal(10);
+  count : Signal<number>=computed(()=>20);
 
-  constructor() {
-    effect(() => {
-      console.log(this.count());
-    })
+  updateValue(){
+    //this.data.set("Hello");
+    this.data.update(val=> val+10);
   }
-
-  updateValue(value: string) {
-    //this.data=200;
-    if (value == 'des') {
-      this.count.set(this.count() - 1);
-    }
-    else {
-      this.count.set(this.count() + 1);
-
-    }
-  }
-
-
 }
