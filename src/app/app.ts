@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { Login } from "./login/login";
 import { Signup } from "./signup/signup";
 import { Profile } from "./profile/profile";
+import { ValueChangeEvent } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -11,41 +12,19 @@ import { Profile } from "./profile/profile";
   styleUrl: './app.css'
 })
 export class App {
-  count : number=0;
+  username="";
 
-  handleIncrement()
-  {
-    this.count = this.count+1;
+  getUserName(event:Event){
+    //this.username = (event.target as HTMLInputElement).value;
+
   }
 
-  handleDecrement()
-  {
-    this.count = this.count-1;
+  setUserName(){
+    this.username="Peter";
   }
 
-  handleReset()
-  {
-    this.count = 0;
+  getUserNameWithTemplate(val : string){
+    this.username=val;
+    console.log(val);
   }
-
-  handleCounter(val : string)
-  {
-    if(val == 'minus'){
-      if(this.count <= 0){
-        alert("Value cannot be negative!");
-      }else{
-        this.count = this.count -1;
-      }
-      
-    } else if(val == 'plus'){
-      this.count = this.count +1;
-    } else{
-      this.count = 0;
-    }
-  }
-
-
-
-
-
 }
