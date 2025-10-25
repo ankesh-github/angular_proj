@@ -7,7 +7,7 @@ import { ValueChangeEvent } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [Profile],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

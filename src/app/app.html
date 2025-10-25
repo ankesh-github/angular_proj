@@ -1,12 +1,12 @@
-<h1>Get and Set Input field Value</h1>
-<h2>{{username}}</h2>
-<input value="{{username}}"
- (input)="getUserName($event)"
- type ="text"
- #userNameField
- placeholder="enter user name">
+<style>
+    h2 {
+        color : orange;
+        background-color: black;
+    }
+</style>
 
-<br><br>
-<button (click)="setUserName()">Set User name</button>
-<button (click)="getUserNameWithTemplate(userNameField.value)">Get User name</button>
+<h1>CSS Style Rules and Use</h1>
+<app-profile></app-profile>
+<h2>Heading H2</h2>
+<h3 style="color: green; background-color: yellow; ">This is H3 Tag</h3>
 
