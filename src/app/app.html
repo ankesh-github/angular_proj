@@ -1,17 +1,23 @@
-<h1>For Loop in Angular 20</h1>
+<h1>Event in Angular</h1>
+<button class ="btn" (click)="handleEvent($event)">Click on Button</button>
+<br><br>
+<div
+(mouseenter)="handleEvent($event)"
+ style="background-color: green; height: 100px; width: 100px;">
+</div>
+<br><br>
+<div
+(mouseleave)="handleEvent($event)"
+ style="background-color: red; height: 100px; width: 100px;">
+</div>
 
-@for(user of users; track user){
-    <h2>{{user}}</h2>
-}
+<br><br>
+<input
+(blur)="handleEvent($event)"
+(focus)="handleEvent($event)"
+(input)="handleEvent($event)"
+type="text" 
+name="user"
+>
 
-<hr>
 
-@for(student of students; track student; let id=$index){
-    <h2>
-        <span>{{id+1}}</span>
-        <span>{{student.name}} </span>
-        <span>{{student.age}} </span>
-        <span>{{student.email}} </span>
-        <button (click)="getName(student.name)">Get Name</button>
-    </h2>
-}
