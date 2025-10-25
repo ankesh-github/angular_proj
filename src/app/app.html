@@ -1,23 +1,9 @@
-<h1>Event in Angular</h1>
-<button class ="btn" (click)="handleEvent($event)">Click on Button</button>
-<br><br>
-<div
-(mouseenter)="handleEvent($event)"
- style="background-color: green; height: 100px; width: 100px;">
-</div>
-<br><br>
-<div
-(mouseleave)="handleEvent($event)"
- style="background-color: red; height: 100px; width: 100px;">
-</div>
+<h1>Basics for Signal</h1>
+<h2>{{data}}</h2>
 
-<br><br>
-<input
-(blur)="handleEvent($event)"
-(focus)="handleEvent($event)"
-(input)="handleEvent($event)"
-type="text" 
-name="user"
->
+<!-- <h2>{{count()}}</h2>
+<button (click)="updateValue()">Update Value</button>
+<br><br> -->
 
-
+<button (click)="updateValue('dec')">Decrement</button>
+<button (click)="updateValue('inc')">Increment</button>
