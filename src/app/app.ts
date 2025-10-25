@@ -12,13 +12,16 @@ import { ValueChangeEvent } from '@angular/forms';
   styleUrl: './app.css'
 })
 export class App {
-  color = "green";
-  handleColor(val : string){
-    this.color=val; 
-  }
+  users = ['Shyam','Ram','Laxman','Bharat'];
+  students = [
+    {name:'Shyam', age:20, email:'shyam@gmail.com'},
+    {name:'Ram', age:22, email:'ram@gmail.com'},
+    {name:'Laxman', age:25, email:'laxman@gmail.com'},
+    {name:'Bharat', age:23, email:'bharat@gmail.com'},
 
-  changeColor(event : Event){
-    this.color = (event.target as HTMLInputElement).value;
+  ]
+
+  getName(name : string){
+    console.log(name);
   }
- 
 }
