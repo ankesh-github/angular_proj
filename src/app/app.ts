@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, effect, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Login } from "./login/login";
 import { Signup } from "./signup/signup";
@@ -12,12 +12,25 @@ import { ValueChangeEvent } from '@angular/forms';
   styleUrl: './app.css'
 })
 export class App {
-  
-  handleEvent(event : Event){
-    console.log("function called", event.type)
-    console.log("function called", (event.target as HTMLInputElement).className);
-        console.log("function called", (event.target as HTMLInputElement).value);
+  data = 100;
+  count = signal(10);
 
+  constructor() {
+    effect(() => {
+      console.log(this.count());
+    })
   }
-  
+
+  updateValue(value: string) {
+    //this.data=200;
+    if (value == 'des') {
+      this.count.set(this.count() - 1);
+    }
+    else {
+      this.count.set(this.count() + 1);
+
+    }
+  }
+
+
 }
