@@ -12,11 +12,17 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './app.css'
 })
 export class App {
-  name="Ankesh";
+  task="meeting at 10";
+  taskList:{id:number, name:string}[]=[];
 
-  // changeName(event: Event){
-  //   const val=(event.target as HTMLInputElement).value;
-  //   this.name=val;
-  // }
- 
+  addTask(){
+    this.taskList.push({id:this.taskList.length+1, name:this.task});
+    this.task="";
+  }
+
+  deleteTask(id: number){
+    this.taskList = this.taskList.filter((item)=>item.id!=id);
+
+  }
+
 }
