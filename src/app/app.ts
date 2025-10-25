@@ -6,20 +6,46 @@ import { Profile } from "./profile/profile";
 
 @Component({
   selector: 'app-root',
-  imports: [Login, Signup, Profile],
+  imports: [],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  handleClickEvent()
+  count : number=0;
+
+  handleIncrement()
   {
-    //alert("function called");
-    console.log("function called!");
-    this.otherFunction();
+    this.count = this.count+1;
   }
 
-  otherFunction()
+  handleDecrement()
   {
-    console.log("other function!");
+    this.count = this.count-1;
   }
+
+  handleReset()
+  {
+    this.count = 0;
+  }
+
+  handleCounter(val : string)
+  {
+    if(val == 'minus'){
+      if(this.count <= 0){
+        alert("Value cannot be negative!");
+      }else{
+        this.count = this.count -1;
+      }
+      
+    } else if(val == 'plus'){
+      this.count = this.count +1;
+    } else{
+      this.count = 0;
+    }
+  }
+
+
+
+
+
 }
