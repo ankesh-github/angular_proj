@@ -1,21 +1,13 @@
-<h1>ngSwitch Directive Example</h1>
-<!-- <h3 style="background-color: red;">Red Color</h3>
-<h3 style="background-color: green;">Green Color</h3>
-<h3 style="background-color: pink;">Pink Color</h3>
-<h3 style="background-color: yellow;">Red Color</h3>
-<h3 style="background-color: blue;">Blue Color</h3> -->
-
-<button (click)="changeColor('red')">Red Color</button>
-<button (click)="changeColor('yellow')">Yellow Color</button>
-<button (click)="changeColor('blue')">Blue Color</button>
-<button (click)="changeColor('pink')">Pink Color</button>
-<button (click)="changeColor('green')">Green Color</button>
-<button (click)="changeColor('black')">No Color</button>
-<div [ngSwitch]="color">
-    <h2 *ngSwitchCase="'red'"  style="background-color: red;">Red Color</h2>
-    <h2 *ngSwitchCase="'green'" style="background-color: green;">Green Color</h2>
-    <h2 *ngSwitchCase="'pink'" style="background-color: pink;">Pink Color</h2>
-    <h2  *ngSwitchCase="'yellow'" style="background-color: yellow;">Red Color</h2>
-    <h2 *ngSwitchCase="'blue'" style="background-color: blue;">Blue Color</h2>
-    <h2 *ngSwitchDefault="">No Color Matched</h2>
-</div>
+<h1>Basic Routing in Angular</h1>
+<ul>
+    <li>
+        <a routerLink="login">Login</a>
+    </li>
+    <li>
+        <a routerLink="about">About</a>
+    </li>
+    <li>
+        <a routerLink="contact">Contact</a>
+    </li>
+</ul>
+<router-outlet></router-outlet>
