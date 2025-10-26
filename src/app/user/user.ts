@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './user.css',
 })
 export class User {
-  @Input() user:string = '';
-  @Input() city:string='';
+  @Input() user:string='';
 
 }
+

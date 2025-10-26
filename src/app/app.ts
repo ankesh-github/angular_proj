@@ -10,10 +10,6 @@ import { User } from "./user/user";
   styleUrl: './app.css'
 })
 export class App {
-  userName="Bruce";
-
-  changeUser(val : string){
-    this.userName=val;
-  }
+    users=['Anil','Bruce','Peter'];
 
 }
