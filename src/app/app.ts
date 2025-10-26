@@ -3,36 +3,20 @@ import { RouterOutlet } from '@angular/router';
 import { Login } from "./login/login";
 import { Signup } from "./signup/signup";
 import { Profile } from "./profile/profile";
-import { NgIf } from '@angular/common';
+import { NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [NgIf],
+  imports: [NgSwitch , NgSwitchCase, NgSwitchDefault],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  show=false;
-  block=1;
-  login=true;
+  color="black";
 
-  toggle(){
-    this.show =!this.show;
+  changeColor(color:string){
+    this.color = color;
+
   }
-
-  updateBlock(){
-    if(this.block==4){
-      this.block=1;
-    }
-    else{
-    this.block++;
-    }
-  }
-
-  loginToggle(){
-    this.login =! this.login;
-  }
-
-
-  
+ 
 }
