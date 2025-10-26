@@ -1,2 +1,13 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
+<h1>Basic of React Forms</h1>
+<input type="text" placeholder="enter name" [formControl]="name">
+<br><br>
+<input type="text" placeholder="enter email" [formControl]="email">
+<br><br>
+<input type="text" placeholder="enter password" [formControl]="password">
+<br><br>
+<button (click)="getValue()">Get Info</button>
+<button (click)="setValue()">Set Info</button>
+
+<h2>{{name.value}}</h2>
+<h2>{{email.value}}</h2>
+<h2>{{password.value}}</h2>
