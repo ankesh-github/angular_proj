@@ -1,9 +1,6 @@
-<h1>Data Child to Child Parent</h1>
-<app-user [user]="userName" city="Noida"></app-user>
-
-<select #selectedUser (change)="changeUser(selectedUser.value)" name="" id="">
-    <option value="ramesh">Ramesh</option>
-    <option value="mahesh">Mahesh</option>
-    <option value="naresh">Naresh</option>
-    <option value="rajesh">Rajesh</option>
-</select>
+<h1>Reuse component</h1>
+@for(user of users; track user){
+    <div>
+        <app-user [user]="user"></app-user>
+    </div>
+}
