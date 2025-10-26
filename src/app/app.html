@@ -1,13 +1,18 @@
-<h1>*ngFor Directives in Angular</h1>
-<ul>
-    <li *ngFor="let student of students">
-        {{student}}
+<h1>*ngIf Directives in Angular</h1>
+<h1 *ngIf="show">Heading</h1>
+<button (click)="toggle()">Toggle Button</button>
 
-    </li>
-</ul>
+<br><br>
 <hr>
-<ul>
-    <li *ngFor="let student of studentData">
-        {{student.name}},{{student.age}},{{student.email}}
-    </li>
-</ul>
+<h1 *ngIf="block==1">Heading 1</h1>
+<h1 *ngIf="block==2">Heading 2</h1>
+<h1 *ngIf="block==3">Heading 3</h1>
+<h1 *ngIf="block==4">Heading 4 </h1>
+<button (click)="updateBlock()">Update Block</button>
+
+<hr>
+<br><br>
+<button (click)="loginToggle()" *ngIf="login; else elseBlock">Logout</button>
+<ng-template #elseBlock>
+    <button (click)="loginToggle()">Login</button>
+</ng-template>

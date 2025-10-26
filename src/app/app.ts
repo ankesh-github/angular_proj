@@ -3,22 +3,36 @@ import { RouterOutlet } from '@angular/router';
 import { Login } from "./login/login";
 import { Signup } from "./signup/signup";
 import { Profile } from "./profile/profile";
-import { NgFor } from '@angular/common';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [NgFor],
+  imports: [NgIf],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  students=["Ramesh","Mahesh","Suresh"];
+  show=false;
+  block=1;
+  login=true;
 
-  studentData=[
-    {name:"Ramesh",age:"32",email:"ramesh@gmail.com"},
-    {name:"Mahesh",age:"34",email:"mahesh@gmail.com"},
-    {name:"Suresh",age:"30",email:"suresh@gmail.com"},
-    {name:"rajesh",age:"38",email:"rajesh@gmail.com"},
-  ]
+  toggle(){
+    this.show =!this.show;
+  }
+
+  updateBlock(){
+    if(this.block==4){
+      this.block=1;
+    }
+    else{
+    this.block++;
+    }
+  }
+
+  loginToggle(){
+    this.login =! this.login;
+  }
+
+
   
 }
