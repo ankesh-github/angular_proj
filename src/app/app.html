@@ -1,33 +1,9 @@
+<h1>Data Child to Child Parent</h1>
+<app-user [user]="userName" city="Noida"></app-user>
 
-<h1>Template Driven Forms</h1>
-<form #userForm="ngForm" (ngSubmit)="addUser(userForm.value)">
-    <input required #name="ngModel" type="text" placeholder="enter name" name="name" ngModel>
-    <span *ngIf="name.invalid && name.touched" class="error">Name is required field</span>
-    <br><br>
-    <input #password="ngModel" type="password" required minlength="5" maxlength="10" placeholder="enter password" name="password" ngModel>
-    <span *ngIf="password.invalid && password.touched" class="error">Password is required , min length 5 and max is 10</span>
-    <br><br>
-    <input #email="ngModel" type="email" required email minlength="5" maxlength="10" placeholder="enter email" name="email" ngModel>
-    <span *ngIf="email.invalid && email.touched" class="error">Please enter valid email</span>
-    <br><br>
-    <input #address="ngModel" pattern="[a-zA-Z0-9\s]+" type="text"  placeholder="type address" name="address" ngModel>
-    <span *ngIf="address.invalid && address.touched" class="error">Please enter valid address</span>
-    <br><br>
-    <select #gender="ngModel" required name="gender" ngModel>
-        <option value="">Select Gender</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-    </select>
-    <span class="error" *ngIf="gender.invalid && gender.touched">Please select gender</span>
-    <br><br>
-    <input type="range" name="range" ngModel>
-    <br><br>
-    <button [disabled]="userForm.invalid">Add User</button>
-
-
-</form>
-<h3>{{userData?.name}}</h3>
-<h3>{{userData?.password}}</h3>
-<h3>{{userData?.gender}}</h3>
-<h3>{{userData?.range}}</h3>
-<h3>{{userData?.email}}</h3>
+<select #selectedUser (change)="changeUser(selectedUser.value)" name="" id="">
+    <option value="ramesh">Ramesh</option>
+    <option value="mahesh">Mahesh</option>
+    <option value="naresh">Naresh</option>
+    <option value="rajesh">Rajesh</option>
+</select>
