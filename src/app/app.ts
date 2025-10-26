@@ -10,6 +10,10 @@ import { User } from "./user/user";
   styleUrl: './app.css'
 })
 export class App {
-    users=['Anil','Bruce','Peter'];
+  users:string[] | undefined
+  handleUsers(users:string[]){
+    console.log(users);
+    this.users=users;
+  }
 
 }
