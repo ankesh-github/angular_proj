@@ -3,26 +3,21 @@ import { RouterOutlet } from '@angular/router';
 import { Login } from "./login/login";
 import { Signup } from "./signup/signup";
 import { Profile } from "./profile/profile";
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule],
+  imports: [],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  task="meeting at 10";
-  taskList:{id:number, name:string}[]=[];
+  color= 'red';
+  fontSizeNormal="50px";
+  fontSizeBig="60px";
+  zoom=true;
+  size=60
 
-  addTask(){
-    this.taskList.push({id:this.taskList.length+1, name:this.task});
-    this.task="";
+  zoomToggle(){
+    this.zoom =!this.zoom;
   }
-
-  deleteTask(id: number){
-    this.taskList = this.taskList.filter((item)=>item.id!=id);
-
-  }
-
 }
