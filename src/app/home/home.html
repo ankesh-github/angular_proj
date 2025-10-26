@@ -1,7 +1,8 @@
-<h1>User List</h1>
+<h1>Home Page</h1>
+<!-- <a routerLink="profile">Go To Profile Page</a> -->
+<!-- <a [routerLink]="['profile', {name:'Ankesh Tiwari'}]">Go To Profile Page</a>
+<br>
+<a [routerLink]="['profile', {name:'Peter'}]">Go To Profile Page</a> -->
 
-@for(user of users; track user.id){
-    <ul>
-        <li><a routerLink="user/{{user.id}}/{{user.name}}">{{user.name}}</a></li>
-    </ul>
-}
+<button (click)="goToProfile()">Go to profile Page</button>
+<button (click)="goToProfile()">Go to profile Page</button>
