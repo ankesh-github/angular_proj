@@ -1,10 +1,13 @@
-<h1 [style.backgroundColor]="color" [style.fontSize]="fontSizeNormal">Dynamic Style</h1>
-<br><br>
+<h1>*ngFor Directives in Angular</h1>
+<ul>
+    <li *ngFor="let student of students">
+        {{student}}
 
-<h1 [style.fontSize]="'20px'">Heading Tag 2</h1>
-<br><br>
-
-<h1 [style.fontSize]="zoom ? fontSizeBig : fontSizeNormal">Heading Tag 3</h1>
-<button (click)="zoomToggle()">Zoom Toggle</button>
-
-<h1 [style.fontSize.px]="size">Heading Tag 4</h1>
+    </li>
+</ul>
+<hr>
+<ul>
+    <li *ngFor="let student of studentData">
+        {{student.name}},{{student.age}},{{student.email}}
+    </li>
+</ul>
