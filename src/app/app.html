@@ -1,16 +1,23 @@
-<h1>Form Grouping in Reactive Forms</h1>
-<form [formGroup]="profileForm"  (ngSubmit)="submitData()">
-    <input type="text" placeholder="enter name" formControlName="name">
-    <span *ngIf="name?.hasError('required')">This is required field</span>
-    <span class="error" *ngIf="name?.invalid && (name?.dirty || name?.touched)">Please enter valid input</span>
-    <br><br>
 
-    <input type="text" placeholder="enter email" formControlName="email">
-    <span *ngIf="email?.hasError('required')">This is required field</span>
+<h1>Template Driven Forms</h1>
+<form #userForm="ngForm" (ngSubmit)="addUser(userForm.value)">
+    <input type="text" placeholder="enter name" name="name" ngModel>
     <br><br>
+    <input type="password" placeholder="enter password" name="password" ngModel>
+    <br><br>
+    <select name="" name="gender" ngModel>
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+    <br><br>
+    <input type="range" name="range" ngModel>
+    <br><br>
+    <button>Add User</button>
 
-    <input type="text" placeholder="enter password" formControlName="password">
-    <span *ngIf="password?.hasError('required')">This is required field</span>
-    <br><br>
-    <button >Submit</button>
+
 </form>
+<h3>{{userData?.name}}</h3>
+<h3>{{userData?.password}}</h3>
+<h3>{{userData?.gender}}</h3>
+<h3>{{userData?.range}}</h3>
