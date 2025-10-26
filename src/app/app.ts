@@ -1,10 +1,6 @@
 import { Component, computed, effect, signal, Signal, WritableSignal } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { Login } from "./login/login";
-import { Signup } from "./signup/signup";
-import { Profile } from "./profile/profile";
-import { Header } from "./header/header";
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -13,26 +9,24 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './app.css'
 })
 export class App {
-  // name= new FormControl();
-  // password = new FormControl();
-  // email = new FormControl();
+  profileForm =new FormGroup({
+    name:new FormControl('abc'),
+    email:new FormControl('abc@gmail.com'),
+    password:new FormControl('abc123'),
 
-  name= new FormControl("abc");
-  password = new FormControl("abc123");
-  email = new FormControl("abc@gmail.com");
+  });
 
-
-  getValue(){
-    console.log(this.name.value);
-    console.log(this.email.value);
-    console.log(this.password.value);
+  submitData(){
+    console.log(this.profileForm.value)
   }
 
   setValue(){
-    this.name.setValue("ankesh");
-    this.password.setValue("12345");
-    this.email.setValue("ankesh@gmail.com");
-   
+    this.profileForm.setValue({
+      name:'peter',
+      email:'peter@gmail.com',
+      password:'pass123'
+    })
   }
- 
+
+
 }

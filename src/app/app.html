@@ -1,13 +1,14 @@
-<h1>Basic of React Forms</h1>
-<input type="text" placeholder="enter name" [formControl]="name">
-<br><br>
-<input type="text" placeholder="enter email" [formControl]="email">
-<br><br>
-<input type="text" placeholder="enter password" [formControl]="password">
-<br><br>
-<button (click)="getValue()">Get Info</button>
-<button (click)="setValue()">Set Info</button>
+<h1>Form Grouping in Reactive Forms</h1>
+<form [formGroup]="profileForm"  (ngSubmit)="submitData()">
+    <input type="text" placeholder="enter name" formControlName="name">
+    <br><br>
+    <input type="text" placeholder="enter email" formControlName="email">
+    <br><br>
+    <input type="text" placeholder="enter password" formControlName="password">
+    <br><br>
+    <button >Submit</button>
+    <button type="btn" (click)="setValue()">Set Values</button>
+</form>
 
-<h2>{{name.value}}</h2>
-<h2>{{email.value}}</h2>
-<h2>{{password.value}}</h2>
+
+<h3>{{this.profileForm.value.name}}</h3>
