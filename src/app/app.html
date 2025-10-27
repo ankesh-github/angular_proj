@@ -1,6 +1,8 @@
-<h1>Pass data child to Parent</h1>
-<app-user (getUsers)="handleUsers($event)"></app-user>
-
-@for(user of users; track user){
-    <h1>{{user}}</h1>
-}
+<h1>Pipes in Angular</h1>
+<h2>{{title | uppercase}}</h2>
+<h2>{{title | titlecase}}</h2>
+<h2>{{title | lowercase}}</h2>
+<hr>
+<h2>{{today}}</h2>
+<hr>
+<h2>{{amount | currency :'INR'}}</h2>
