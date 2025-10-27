@@ -1,2 +1,5 @@
 <h1>Life Cycle Methods in Angular</h1>
-<app-user></app-user>
+<button (click)="getData()">Get Data</button>
+@for(item of productData; track item){
+    <h1>{{item.name}}</h1>
+}
