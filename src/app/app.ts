@@ -1,16 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { Component} from '@angular/core';
 import {} from '@angular/forms';
+import { CurrencyConverterPipe } from './pipe/currency-converter-pipe';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule],
+  imports: [CurrencyConverterPipe],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  title = "Pipes Demo";
-  today = new Date();
-  amount=10;
+ amount=10;
 
 }
