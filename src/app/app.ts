@@ -10,32 +10,56 @@ import { User } from './interfaces/User';
   styleUrl: './app.css'
 })
 export class App {
-  users:User[]=[];
-  constructor(private userService : Users){};
+  users: User[] = [];
+  selectedUser:User | undefined
+  constructor(private userService: Users) { };
 
-  ngOnInit(){
+  ngOnInit() {
     this.getUser();
-    
+
   }
 
-  getUser(){
+  getUser() {
     this.userService.getUsers().subscribe(
-      (data:User[])=>{
+      (data: User[]) => {
         console.log(data);
-        this.users=data;
+        this.users = data;
       }
     );
   }
 
-  addUser(user: User){
-    console.log(user);
-    this.userService.saveUsers(user).subscribe((data: User)=>{
-      console.log(data); 
-      if(data){
+  addUser(user: User) {
+    if (!this.selectedUser) {
+      this.userService.saveUsers(user).subscribe((data: User) => {
+        console.log(data);
+        if (data) {
+          this.getUser();
+        }
+      });
+    } else {
+      const userData={...user, id:this.selectedUser.id};
+      this.userService.updateUser(userData).subscribe((data:User)=>{
+        console.log(data);
+        this.getUser();
+      });
+
+    }
+  }
+
+  deleteUser(id: string) {
+    this.userService.deleteUser(id).subscribe((data: User) => {
+      console.log(data);
+      if (data) {
         this.getUser();
       }
     });
+  }
 
+  selectUser(id:string){
+    this.userService.getSelectedUser(id).subscribe((data:User)=>{
+      console.log(data);
+      this.selectedUser=data;
+    });
   }
 
 }
