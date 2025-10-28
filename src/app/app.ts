@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { Users } from './services/users';
 import { User } from './interfaces/User';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -14,12 +14,28 @@ export class App {
   constructor(private userService : Users){};
 
   ngOnInit(){
+    this.getUser();
+    
+  }
+
+  getUser(){
     this.userService.getUsers().subscribe(
       (data:User[])=>{
         console.log(data);
         this.users=data;
       }
     );
+  }
+
+  addUser(user: User){
+    console.log(user);
+    this.userService.saveUsers(user).subscribe((data: User)=>{
+      console.log(data); 
+      if(data){
+        this.getUser();
+      }
+    });
+
   }
 
 }
